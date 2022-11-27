@@ -1,0 +1,37 @@
+.formStyle{
+    width: auto;
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100px;
+    background-color: #3B9AE1;
+    button{
+        color: black;
+        margin-left: 20px;
+        border: none;
+        background-color: #1f90e6;
+        padding: 10px 20px;
+    }
+}   
+
+
+.search{
+    padding: 25px;
+    background-color: #3B9AE1;  
+    position: fixed;
+    width: 100%;
+}
+
+input{
+    color: white;
+    background-color: #3B9AE1 ;
+    border-style: hidden;
+    font-size: 22px;
+    width: auto;
+    pointer-events: stroke;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7; /* Firefox */
+  }
+
