@@ -42,7 +42,7 @@ export default function Search() {
         >
 
         <div className='search'>
-            <form onSubmit={getWeatherData} className="formStyle ">
+            <form onSubmit={getWeatherData} className="formStyle d-flex justify-content-start">
                 
                     <input
                         type="text" 

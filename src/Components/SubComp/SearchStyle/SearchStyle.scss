@@ -1,5 +1,5 @@
 .formStyle{
-    width: auto;
+    //width: auto;
     margin-left: 20px;
     font-family: 'Raleway', sans-serif;
     font-weight: 100px;
@@ -12,6 +12,23 @@
         padding: 10px 20px;
     }
 }   
+
+@media all and (max-width:517px) {
+    .formStyle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        button{
+            margin-top: 10px;
+            margin-left: 0;
+            width: 180px;
+        }
+        input{
+            width: 180px;
+        }
+    }
+    
+}
 
 
 .search{
