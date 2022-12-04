@@ -21,6 +21,7 @@ export default function Search() {
     async function getWeatherData(e){
         e.preventDefault();
         const resp = await Fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&cnt=8&units=metric&appid=${API}`,'GET');
+        // console.log("the status" + resp.status);
         if(resp.status === 200){
             let temp = resp.data.list.map((time)=>{
                 return time;
@@ -30,12 +31,13 @@ export default function Search() {
             setWeatherData(temp);
         }else{
             console.warn("sorry this api failed");
+            contextData.changeId(404);
         }
+       // console.log(resp.data);
     }
   
     useEffect(()=>{
     }, [])
-
   return (
         <LangContext.Provider
             value={{weatherData}}
