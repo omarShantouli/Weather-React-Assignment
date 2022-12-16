@@ -31,8 +31,6 @@ export default function Weather24Hour() {
                                     </div>
                             })
                         }
-                        <div className='row'>
-                    </div>
                 </div>
                 :
                 null

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import {Fetch} from "../../Utils/AppUtils"
 import "bootstrap";
 import "bootstrap/scss/bootstrap.scss";
@@ -11,36 +11,32 @@ const API = "c3a4918fed054f7b8f2e7082432da73d";
 export default function Search() {
 
     const [cityName, setCityName] = useState("");
-    const [weatherData, setWeatherData] = useState("empty");
     var contextData = useContext(LangContext);
 
     function changeCityName(e){
         setCityName(e.target.value)
     }
 
+
     async function getWeatherData(e){
         e.preventDefault();
         const resp = await Fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&cnt=8&units=metric&appid=${API}`,'GET');
-        // console.log("the status" + resp.status);
         if(resp.status === 200){
             let temp = resp.data.list.map((time)=>{
                 return time;
             })
             contextData.updateWeatherData(temp);
             temp.shift()
-            setWeatherData(temp);
+           contextData.changeId(200);
         }else{
             console.warn("sorry this api failed");
             contextData.changeId(404);
         }
-       // console.log(resp.data);
+
     }
   
-    useEffect(()=>{
-    }, [])
   return (
-        <LangContext.Provider
-            value={{weatherData}}
+        <div
         >
 
         <div className='search'>
@@ -58,7 +54,7 @@ export default function Search() {
             </form>
          
         </div>
-        </LangContext.Provider>
+        </div>
     
   )
 }

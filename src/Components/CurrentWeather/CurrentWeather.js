@@ -9,12 +9,12 @@ export default function CurrentWeather() {
   var temp_min = "", temp_max = "", humidity = "", pressure = "";
 if(contextData.weatherData !== 'empty')
 {
-  console.log(contextData?.weatherData[0].weather[0].id);
+  console.log(contextData?.weatherData[0]?.weather[0]?.id);
 
-  temp_min = Math.round(contextData?.weatherData[0].main.temp_min);
-  temp_max = Math.round(contextData?.weatherData[0].main.temp_max);
-  humidity = contextData?.weatherData[0].main.humidity;
-  pressure = contextData?.weatherData[0].main.pressure;
+  temp_min = Math.round(contextData?.weatherData[0]?.main?.temp_min);
+  temp_max = Math.round(contextData?.weatherData[0]?.main?.temp_max);
+  humidity = contextData?.weatherData[0]?.main?.humidity;
+  pressure = contextData?.weatherData[0]?.main?.pressure;
 }
   return (
     <div>

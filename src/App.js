@@ -14,8 +14,8 @@ function App() {
     setWeatherData(data);
   }
 
-  function changeId(){
-    setId(404);
+  function changeId(_id){
+    setId(_id);
   }
 
   return (
@@ -27,24 +27,22 @@ function App() {
           changeId
         }}
       >
+        <header className="app__header">
+                <Search />
+        </header>
+    
         {
           id === 404?
-          <div className='d-flex justify-content-center align-items-center flex-column min-vh-100 bg-light'>
-            <h1 className='display-2 w-50 d-flex text-center mb-5 bg-light'>City Name Not Found</h1>
-            <button onClick={()=>{setId(202)}} className='border-0 text-primary display-6 bg-light'>HOME</button>
+          <div className='h1 d-flex align-items-center justify-content-center min-vh-100 text-danger'>
+            City Name Not Found
           </div>
-           
-           :
-          <>
-              <header className="app__header">
-                <Search />
-              </header>
-
+              :
               <main className="app__main">
-                <CurrentWeather />
-              </main>
-          </>
+              <CurrentWeather />
+            </main>
         }
+        
+         
         
       </LangContext.Provider>
     </div>
